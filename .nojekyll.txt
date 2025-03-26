@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Man Who Walked Alone</title>
+  <style>
+    :root {
+      --bg-color: #111;
+      --text-color: #eee;
+      --border-color: #333;
+      --accent-color: #888;
+      --quote-color: #aaa;
+    }
+
+    body.light {
+      --bg-color: #f8f8f8;
+      --text-color: #111;
+      --border-color: #ccc;
+      --accent-color: #333;
+      --quote-color: #666;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'EB Garamond', serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--text-color);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2em;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Courier New', monospace;
+      color: var(--text-color);
+    }
+
+    .section {
+      margin-bottom: 4em;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2em;
+    }
+
+    .quote {
+      font-style: italic;
+      color: var(--quote-color);
+      margin: 1em 0;
+      padding-left: 1em;
+      border-left: 2px solid var(--border-color);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.6em 1.2em;
+      border: 1px solid var(--accent-color);
+      color: var(--text-color);
+      margin-top: 1em;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: var(--text-color);
+      color: var(--bg-color);
+      border-color: var(--text-color);
+    }
+
+    input, textarea {
+      width: 100%;
+      background: var(--bg-color);
+      border: none;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-color);
+      font-family: monospace;
+      padding: 0.5em;
+      margin-top: 1em;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+
+    .top-bar {
+      text-align: right;
+      margin-bottom: 1em;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4em;
+      font-size: 0.8em;
+      color: var(--quote-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <button class="button" onclick="toggleTheme()">Toggle Theme</button>
+      <button class="button" onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <section class="section">
+      <h1>The Man Who Walked Alone</h1>
+      <p>A novel about rebellion against existence, the search for meaning, and the cost of clarity in a distracted world.</p>
+      <a href="#" class="button">Buy the Book</a>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About Gregorio</h2>
+      <p>
+        Gregorio Mersantin Roquentin is not a hero. He is a man who rejected the illusion of belonging. An observer in a collapsing society. A rebel without a cause, because the cause is absurd. In him lives the echo of Camus’ Sisyphus, the solitude of Schopenhauer, and the strategic mind of a reluctant Nietzschean.
+      </p>
+      <p>
+        He walks alone—not as a victim, but as a thinker. A man not seeking answers, but clarity.
+      </p>
+    </section>
+
+    <section class="section" id="excerpts">
+      <h2>Excerpts</h2>
+      <p class="quote">
+        “He looked at the spreadsheet the way a monk stares at a crucifix—not out of devotion, but because it reminds him of the futility of prayer.”
+      </p>
+      <p class="quote">
+        “Most people do not want freedom. They want safety, applause, and sleep.”
+      </p>
+      <p class="quote">
+        “If truth is a burden, Gregorio carried it like a blade in his coat pocket—just in case.”
+      </p>
+    </section>
+
+    <section class="section" id="quotes">
+      <h2>Philosophical Quotes</h2>
+      <p class="quote">“Man is the only creature who refuses to be what he is.” – Albert Camus</p>
+      <p class="quote">“The greatest shortcoming of the human race is our inability to understand the exponential function.” – Albert Bartlett</p>
+      <p class="quote">“The reason things seem unbearable is not because they are hard but because we are soft.” – Seneca</p>
+      <p class="quote">“Whoever fights monsters should see to it that in the process he does not become a monster.” – Friedrich Nietzsche</p>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact / Join the List</h2>
+      <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+        <label for="email">Email (for updates only):</label>
+        <input type="email" id="email" name="email" required>
+        <label for="msg">Message (optional):</label>
+        <textarea id="msg" name="message" rows="3"></textarea>
+        <input type="submit" value="Send" class="button">
+      </form>
+    </section>
+
+    <footer>
+      Created in the spirit of absurdism, solitude, and clarity.<br>
+      © 2025. The Man Who Walked Alone.
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+    }
+
+    function downloadPDF() {
+      const printContent = document.querySelector('.container').cloneNode(true);
+
+      // Remove buttons and form
+      printContent.querySelector('.top-bar').remove();
+      const form = printContent.querySelector('form');
+      if (form) form.remove();
+
+      const printWindow = window.open('', '', 'width=800,height=600');
+      printWindow.document.write(`
+        <html>
+        <head>
+          <title>The Man Who Walked Alone - PDF</title>
+          <style>
+            body {
+              font-family: 'EB Garamond', serif;
+              color: #000;
+              background: #fff;
+              padding: 2em;
+              line-height: 1.6;
+            }
+            h1, h2 {
+              font-family: 'Courier New', monospace;
+            }
+            .quote {
+              font-style: italic;
+              color: #333;
+              padding-left: 1em;
+              border-left: 2px solid #999;
+              margin: 1em 0;
+            }
+            footer {
+              text-align: center;
+              margin-top: 4em;
+              font-size: 0.8em;
+              color: #666;
+            }
+          </style>
+        </head>
+        <body>${printContent.innerHTML}</body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+    }
+  </script>
+</body>
+</html>
