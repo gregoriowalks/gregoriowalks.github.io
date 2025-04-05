@@ -437,5 +437,19 @@
     });
   </script>  
   <script src="submit.js"></script>
+  <script>
+    const quotes = [
+      "“Every time someone tells me to 'just be myself,' I wonder if they’ve considered the consequences.”",
+      "“Don’t mistake solitude for loneliness. Isolation is exile. Solitude is sovereignty.”",
+      "“We seek order, we manufacture oppression. We seek fairness, we build cages.”",
+      "“You matter. You matter so much… until you multiply yourself by the speed of light squared.”",
+      "“AI won’t replace stupidity. It’s just putting it on autopilot—with better UX.”",
+      "“The world moved forward as if direction existed. As if time wasn’t just a gear pretending to keep order.”"
+    ];
+  
+    const quoteElement = document.getElementById("quote-rotate");
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteElement.innerText = quotes[randomIndex];
+  </script>
 </body>
 </html>
