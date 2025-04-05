@@ -187,25 +187,27 @@
       <p class="quote">“The reason things seem unbearable is not because they are hard but because we are soft.” – Seneca</p>
       <p class="quote">“Whoever fights monsters should see to it that in the process he does not become a monster.” – Friedrich Nietzsche</p>
     </section>
-
+    
     <section class="section" id="contact">
-      <h2>Contact / Join the List</h2>
-      <form action="https://formspree.io/f/xblgznob" method="POST">
-        <label for="email">Email (for updates only):</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="msg">Message (optional):</label>
-        <textarea id="msg" name="message" rows="3"></textarea>
-
-        <!-- Spam bot trap -->
-        <input type="text" name="_gotcha" style="display:none">
-
-        <!-- Optional: redirect after submission -->
-        <input type="hidden" name="_redirect" value="https://themanwhowalkedalone.com/thankyou.html">
-  
-        <button type="submit" class="button">Subscribe</button>
-      </form>
+     <h2>Contact / Join the List</h2>
+     <form id="contact-form" action="https://formspree.io/f/xblgznob" method="POST">
+       <label for="email">Email (for updates only):</label>
+       <input type="email" id="email" name="email" required>
+       
+       <label for="msg">Message (optional):</label>
+       <textarea id="msg" name="message" rows="3"></textarea>
+       
+       <!-- Spam bot trap -->
+       <input type="text" name="_gotcha" style="display:none">
+       
+       <button type="submit" class="button">Subscribe</button>
+     </form>
+      
+      <div id="confirmation" style="display:none; margin-top: 2em; font-style: italic;">
+        Thanks — you’ve been added to the list.
+      </div>
     </section>
+
 
     <footer>
       Created in the spirit of absurdism, solitude, and clarity.<br>
@@ -265,5 +267,28 @@
       printWindow.print();
     }
   </script>
+  const form = document.getElementById('contact-form');
+  const confirmation = document.getElementById('confirmation');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      form.style.display = 'none';
+      confirmation.style.display = 'block';
+    } else {
+      confirmation.innerText = 'Oops! Something went wrong.';
+      confirmation.style.display = 'block';
+    }
+  });
+</script>
 </body>
 </html>
