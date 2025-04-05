@@ -371,6 +371,11 @@
       </div>
     </section>
 
+    <section id="quote-oracle" class="section">
+      <h2>Quote of the Moment</h2>
+      <p id="oracle-quote" class="quote">Loading...</p>
+    </section>
+
     <section class="section" id="contact">
       <h2>Contact / Join the List</h2>
       <form id="contact-form">
@@ -512,5 +517,33 @@
       }
     });
   </script>
+  <script>
+    const quotes = [
+      "“The spreadsheet is a lie told in numbers.”",
+      "“If truth is a burden, Gregorio carried it like a blade in his coat pocket.”",
+      "“Most people do not want freedom. They want safety, applause, and sleep.”",
+      "“The abyss isn’t a threat. It’s an invitation.”",
+      "“He didn’t seek clarity. He weaponized it.”"
+    ];
+  
+    function showRandomQuote() {
+      const quoteEl = document.getElementById("oracle-quote");
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteEl.style.opacity = 0;
+      setTimeout(() => {
+        quoteEl.textContent = quote;
+        quoteEl.style.opacity = 1;
+      }, 300);
+    }
+  
+    // Initial load
+    document.addEventListener("DOMContentLoaded", showRandomQuote);
+  </script>
+  <style>
+    #oracle-quote {
+      transition: opacity 0.6s ease-in-out;
+      opacity: 0;
+    }
+  </style>
 </body>
 </html>
