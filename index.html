@@ -529,13 +529,12 @@
     function showRandomQuote() {
       const quoteEl = document.getElementById("oracle-quote");
       const quote = quotes[Math.floor(Math.random() * quotes.length)];
-      quoteEl.style.opacity = 0;
+      quoteEl.textContent = quote;
       setTimeout(() => {
-        quoteEl.textContent = quote;
         quoteEl.style.opacity = 1;
-      }, 300);
+      }, 100); // Delay triggers the transition
     }
-  
+
     // Initial load
     document.addEventListener("DOMContentLoaded", showRandomQuote);
   </script>
