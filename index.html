@@ -491,5 +491,26 @@
     formBlock.style.display = (formBlock.style.display === "none") ? "block" : "none";
   }
   </script>
+  <section id="secret-excerpt" class="section" style="display: none;">
+    <h2>Excerpt: File Not Found</h2>
+    <p class="quote">
+      “He stared at the digital silence and realized: sometimes, not being seen is the only form of truth left.”
+    </p>
+    <p>
+      This excerpt wasn’t meant to be indexed. It exists outside the sitemap. Like Gregorio.
+    </p>
+    <p>
+      <em>In Amsterdam, the clocks still chimed — unaware of how irrelevant they had become.</em>
+    </p>
+  </section>
+  <script>
+    document.addEventListener("keydown", function (e) {
+      if (e.shiftKey && e.key === "A") {
+        const section = document.getElementById("secret-excerpt");
+        section.style.display = "block";
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  </script>
 </body>
 </html>
