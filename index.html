@@ -518,30 +518,39 @@
     });
   </script>
   <script>
-    const quotes = [
-      "“The spreadsheet is a lie told in numbers.”",
-      "“If truth is a burden, Gregorio carried it like a blade in his coat pocket.”",
-      "“Most people do not want freedom. They want safety, applause, and sleep.”",
-      "“The abyss isn’t a threat. It’s an invitation.”",
-      "“He didn’t seek clarity. He weaponized it.”"
-    ];
+    document.addEventListener("DOMContentLoaded", function () {
+      const quotes = [
+        "“The spreadsheet is a lie told in numbers.”",
+        "“If truth is a burden, Gregorio carried it like a blade in his coat pocket.”",
+        "“Most people do not want freedom. They want safety, applause, and sleep.”",
+        "“The abyss isn’t a threat. It’s an invitation.”",
+        "“He didn’t seek clarity. He weaponized it.”"
+      ];
   
-    function showRandomQuote() {
       const quoteEl = document.getElementById("oracle-quote");
-      const quote = quotes[Math.floor(Math.random() * quotes.length)];
-      quoteEl.textContent = quote;
-      setTimeout(() => {
-        quoteEl.style.opacity = 1;
-      }, 100); // Delay triggers the transition
-    }
-
+      if (quoteEl) {
+        const quote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteEl.textContent = quote;
+  
+        // Trigger fade-in
+        setTimeout(() => {
+          quoteEl.classList.add("visible");
+        }, 100);
+      }
+    });
+  </script>
+  
     // Initial load
     document.addEventListener("DOMContentLoaded", showRandomQuote);
   </script>
   <style>
     #oracle-quote {
-      transition: opacity 0.6s ease-in-out;
       opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+  
+    #oracle-quote.visible {
+      opacity: 1;
     }
   </style>
 </body>
