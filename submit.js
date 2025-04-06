@@ -49,12 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       if (response.ok) {
-        formEl.reset(); // Clears the email input after submission
-        formEl.style.display = "none";
-        confirmationEl.style.display = "block";
-       // confirmationEl.style.color = "#ffffff"; // Force visibility for testing
-       // confirmationEl.style.background = "#222"; // Just to check it's rendering
-       // console.log("Confirmation element shown:", confirmationEl);
+        formEl.reset(); // Clear input fields
+        setTimeout(() => {
+          formEl.style.display = "none";      // Hide form
+          confirmationEl.style.display = "block"; // Show confirmation
+        }, 50); // Short delay to avoid browser quirks
       } else {
         confirmationEl.textContent = "Oops! Something went wrong.";
         confirmationEl.style.display = "block";
