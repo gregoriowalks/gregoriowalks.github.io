@@ -3,7 +3,7 @@ const webhookURL = "https://hooks.zapier.com/hooks/catch/22363794/2c76u01/"; // 
 document.addEventListener("DOMContentLoaded", function () {
   // CONTACT FORM
   const contactForm = document.getElementById("contact-form");
-  const contactConfirmation = document.getElementById("confirmation");
+  const contactConfirmation = document.getElementById("contact-confirmation");
 
   if (contactForm) {
     contactForm.addEventListener("submit", async function (e) {
