@@ -371,6 +371,33 @@
       </div>
     </section>
 
+    <section class="section" id="quiz">
+      <h2>Are You Ready to Walk Alone?</h2>
+      <form id="walk-alone-quiz">
+        <p><strong>1.</strong> You discover the world runs on illusions. You...</p>
+        <label><input type="radio" name="q1" value="hide"> ...look away and continue pretending</label><br>
+        <label><input type="radio" name="q1" value="confront"> ...try to convince others</label><br>
+        <label><input type="radio" name="q1" value="exploit"> ...exploit it while it lasts</label><br>
+        <label><input type="radio" name="q1" value="leave"> ...walk away without a word</label>
+    
+        <p><strong>2.</strong> Freedom feels most like...</p>
+        <label><input type="radio" name="q2" value="noise"> ...noise and confusion</label><br>
+        <label><input type="radio" name="q2" value="choice"> ...the ability to choose your burden</label><br>
+        <label><input type="radio" name="q2" value="solitude"> ...solitude with clarity</label><br>
+        <label><input type="radio" name="q2" value="power"> ...power over others</label>
+    
+        <p><strong>3.</strong> You stare into the abyss. It...</p>
+        <label><input type="radio" name="q3" value="blinks"> ...blinks first</label><br>
+        <label><input type="radio" name="q3" value="devours"> ...devours your thoughts</label><br>
+        <label><input type="radio" name="q3" value="mirrors"> ...mirrors your true self</label><br>
+        <label><input type="radio" name="q3" value="shrugs"> ...shrugs like Camus’ Sisyphus</label>
+    
+        <button type="submit" class="button" style="margin-top: 1em;">Reveal Your Result</button>
+      </form>
+    
+      <div id="quiz-result" style="display: none; margin-top: 2em; font-style: italic;"></div>
+    </section>
+
     <section id="quote-oracle" class="section">
       <h2>Quote of the Moment</h2>
       <p id="oracle-quote" class="quote">Loading...</p>
@@ -553,5 +580,29 @@
       opacity: 1;
     }
   </style>
+  <script>
+    document.getElementById("walk-alone-quiz").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const answers = [
+        document.querySelector('input[name="q1"]:checked')?.value,
+        document.querySelector('input[name="q2"]:checked')?.value,
+        document.querySelector('input[name="q3"]:checked')?.value
+      ];
+  
+      const resultEl = document.getElementById("quiz-result");
+  
+      if (answers.includes(undefined)) {
+        resultEl.textContent = "Complete the journey before expecting insight.";
+      } else if (answers.includes("leave") && answers.includes("solitude") && answers.includes("mirrors")) {
+        resultEl.textContent = "You're ready. The path won't greet you — but it will open.";
+      } else {
+        resultEl.textContent = "Not yet. The mirror still holds too many faces.";
+      }
+  
+      resultEl.style.display = "block";
+      resultEl.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
