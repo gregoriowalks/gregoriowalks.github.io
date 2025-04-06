@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         formEl.style.display = "none";
         confirmationEl.style.display = "block";
+        formEl.reset(); // Clears the email input after submission
        // confirmationEl.style.color = "#ffffff"; // Force visibility for testing
        // confirmationEl.style.background = "#222"; // Just to check it's rendering
        // console.log("Confirmation element shown:", confirmationEl);
