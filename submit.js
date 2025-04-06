@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         formEl.style.display = "none";
         confirmationEl.style.display = "block";
-        confirmationEl.style.color = "#ffffff"; // Force visibility for testing
-        confirmationEl.style.background = "#222"; // Just to check it's rendering
-        console.log("Confirmation element shown:", confirmationEl);
+       // confirmationEl.style.color = "#ffffff"; // Force visibility for testing
+       // confirmationEl.style.background = "#222"; // Just to check it's rendering
+       // console.log("Confirmation element shown:", confirmationEl);
       } else {
         confirmationEl.textContent = "Oops! Something went wrong.";
         confirmationEl.style.display = "block";
