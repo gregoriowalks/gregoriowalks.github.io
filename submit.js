@@ -1,7 +1,7 @@
 const webhookURL = "https://hooks.zapier.com/hooks/catch/22363794/2c76u01/"; // <-- your new webhook here
 
 document.addEventListener("DOMContentLoaded", function () {
-  // CONTACT FORM
+  // CONTACT FORM ONLY
   const contactForm = document.getElementById("contact-form");
   const contactConfirmation = document.getElementById("contact-confirmation");
 
@@ -19,24 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // EARLY ACCESS FORM
-  const earlyAccessForm = document.getElementById("early-access-form");
-  const eaConfirmation = document.getElementById("ea-confirmation");
-
-  if (earlyAccessForm) {
-    earlyAccessForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      const data = {
-        email: document.getElementById("ea-email").value,
-        message: "", // no message field in this form
-        source: "Early Access"
-      };
-
-      await submitForm(data, earlyAccessForm, eaConfirmation);
-    });
-  }
-
   // Shared function
   async function submitForm(data, formEl, confirmationEl) {
     try {
@@ -49,11 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       if (response.ok) {
-        formEl.reset(); // Clear input fields
-        setTimeout(() => {
-          formEl.style.display = "none";      // Hide form
-          confirmationEl.style.display = "block"; // Show confirmation
-        }, 50); // Short delay to avoid browser quirks
+        // Clear inputs manually to prevent residual values
+        formEl.querySelectorAll("input, textarea").forEach((el) => {
+          if (el.type !== "hidden") el.value = "";
+        });
+
+        formEl.style.display = "none";
+        confirmationEl.style.display = "block";
       } else {
         confirmationEl.textContent = "Oops! Something went wrong.";
         confirmationEl.style.display = "block";
