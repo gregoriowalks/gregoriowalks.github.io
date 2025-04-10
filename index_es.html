@@ -69,6 +69,30 @@
     }
   }
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const quotes = [
+      "“Miró la hoja de cálculo como un monje mira un crucifijo—no por devoción, sino porque le recordaba la futilidad de rezar.”",
+      "“La mayoría de la gente no quiere libertad. Quiere seguridad, aplausos y dormir.”",
+      "“Si la verdad es una carga, Gregorio la llevaba como una hoja afilada en el bolsillo del abrigo—por si acaso.”",
+      "“El hombre es el único ser que se niega a ser lo que es.” – Albert Camus",
+      "“La mayor falencia de la humanidad es su incapacidad para entender la función exponencial.” – Albert Bartlett",
+      "“Las cosas no parecen insoportables porque sean difíciles, sino porque somos débiles.” – Séneca",
+      "“Quien con monstruos lucha debe tener cuidado de no convertirse también en monstruo.” – Friedrich Nietzsche"
+    ];
+
+    const quoteElement = document.getElementById("quote-rotate");
+
+    if (quoteElement && quotes.length > 0) {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteElement.textContent = quotes[randomIndex];
+    } else {
+      quoteElement.textContent = "No hay citas disponibles.";
+    }
+  });
+</script>
+  
 <style>
     :root {
       --bg-color: #111;
