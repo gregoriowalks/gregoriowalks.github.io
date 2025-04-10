@@ -392,9 +392,10 @@
 </div>
 </section>
 <section class="section" id="quotes">
-<h2>Citas del Libro</h2>
-<blockquote id="quote-rotate">Cada vez que alguien me dice 'sé tú mismo', me pregunto si han considerado las consecuencias.</blockquote>
-<p class="quote">“Miró la hoja de cálculo como un monje mira un crucifijo—no por devoción, sino porque le recordaba la futilidad de rezar.”</p><p class="quote">“La mayoría de la gente no quiere libertad. Quiere seguridad, aplausos y dormir.”</p><p class="quote">“Si la verdad es una carga, Gregorio la llevaba como una hoja afilada en el bolsillo del abrigo—por si acaso.”</p><p class="quote">“El hombre es el único ser que se niega a ser lo que es.” – Albert Camus</p><p class="quote">“La mayor falencia de la humanidad es su incapacidad para entender la función exponencial.” – Albert Bartlett</p><p class="quote">“Las cosas no parecen insoportables porque sean difíciles, sino porque somos débiles.” – Séneca</p><p class="quote">“Quien con monstruos lucha debe tener cuidado de no convertirse también en monstruo.” – Friedrich Nietzsche</p></section>
+  <h2>Citas del Libro</h2>
+  <blockquote id="quote-rotate" class="quote">Cargando...</blockquote>
+</section>
+  
 <section class="section" id="excerpt">
 <h2>Lee un Fragmento</h2>
 <p>Ámsterdam palpitaba con la ilusión del orden. Gregorio M. Roquentin—escéptico, estratega y caminante del absurdo—observaba cómo el reloj de Westerkerk marcaba el tiempo con arrogancia mecánica.</p>
@@ -517,15 +518,6 @@
   </script>
 <script src="submit.js"></script>
 <script>
-    const quotes = [
-      "“Every time someone tells me to 'just be myself,' I wonder if they’ve considered the consequences.”",
-      "“Don’t mistake solitude for loneliness. Isolation is exile. Solitude is sovereignty.”",
-      "“We seek order, we manufacture oppression. We seek fairness, we build cages.”",
-      "“You matter. You matter so much… until you multiply yourself by the speed of light squared.”",
-      "“AI won’t replace stupidity. It’s just putting it on autopilot—with better UX.”",
-      "“The world moved forward as if direction existed. As if time wasn’t just a gear pretending to keep order.”"
-    ];
-  
     const quoteElement = document.getElementById("quote-rotate");
     const randomIndex = Math.floor(Math.random() * quotes.length);
     quoteElement.innerText = quotes[randomIndex];
