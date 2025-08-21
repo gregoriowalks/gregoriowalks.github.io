@@ -1,723 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Man Who Walked Alone</title>
-  <meta name="description" content="A philosophical and strategic journey through collapse, resilience, and the future of intelligence." />
-  <meta name="keywords" content="The Man Who Walked Alone, philosophy, strategy, AI, Nietzsche, stoicism, collapse, personal evolution, absurdism, Camus, existentialism" />
-  <meta name="author" content="G. M. Absurdovich" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#111" />
-
-  <!-- Open Graph tags -->
-  <meta property="og:title" content="The Man Who Walked Alone" />
-  <meta property="og:description" content="A philosophical and strategic journey through collapse, resilience, and the future of intelligence." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://themanwhowalkedalone.com" />
-  <meta property="og:image" content="https://themanwhowalkedalone.com/social-preview.jpg" />
-
-  <!-- Twitter / X Card -->
-  <meta name="twitter:image" content="https://themanwhowalkedalone.com/social-preview.jpg">
-  <meta name="twitter:title" content="The Man Who Walked Alone">
-  <meta name="twitter:description" content="A novel of collapse, clarity, and cold resistance in an absurd world.">
-  <meta name="twitter:image" content="https://themanwhowalkedalone.com/social-preview.jpg">
-  <meta name="twitter:creator" content="@themanwhow73078"> <!-- optional -->
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1.0" />
-  <link rel="apple-touch-icon" href="/favicon.ico">
-
-  <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" href="/favicon.ico">
-
-  <!-- Mobile Browser Theme -->
-  <meta name="theme-color" content="#111" />
-
-  <!-- Plausible Analytics -->
-  <script async defer data-domain="themanwhowalkedalone.com" src="https://plausible.io/js/script.js"></script>
-
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "name": "The Man Who Walked Alone",
-    "author": {
-      "@type": "Person",
-      "name": "G. M. Absurdovich"
-    },
-    "url": "https://themanwhowalkedalone.com",
-    "description": "A philosophical and strategic journey through collapse, resilience, and the future of intelligence.",
-    "inLanguage": "en",
-    "keywords": [
-      "philosophy",
-      "strategy",
-      "absurdism",
-      "AI",
-      "Nietzsche",
-      "collapse",
-      "resilience",
-      "Camus",
-      "existentialism"
-    ],
-    "image": "https://themanwhowalkedalone.com/favicon.ico",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Absurd Publishing"
-    },
-    "potentialAction": {
-      "@type": "ReadAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://themanwhowalkedalone.com"
-      }
-    }
-  }
-  </script>
-  
   <style>
-    :root {
-      --bg-color: #111;
-      --text-color: #eee;
-      --border-color: #333;
-      --accent-color: #888;
-      --quote-color: #aaa;
-    }
-
-    body.light {
-      --bg-color: #f8f8f8;
-      --text-color: #111;
-      --border-color: #ccc;
-      --accent-color: #333;
-      --quote-color: #666;
-    }
-
-    body {
-      background: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'EB Garamond', serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      font-size: 1.1rem; /* <-- added */
-    }
-
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--text-color);
-    }
-
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 2em;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Courier New', monospace;
-      color: var(--text-color);
-    }
-
-    .section {
-      margin-bottom: 4em;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 2em;
-    }
-
-    .quote {
-      font-style: italic;
-      color: var(--quote-color);
-      margin: 1em 0;
-      padding-left: 1em;
-      border-left: 2px solid var(--border-color);
-    }
-
-    .button {
-      display: inline-block;
-      padding: 0.6em 1.2em;
-      border: 1px solid var(--accent-color);
-      background: transparent;
-      color: var(--accent-color);
-      margin-top: 1em;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .button:hover {
-      background: var(--accent-color);
-      color: var(--bg-color);
-      border-color: var(--accent-color);
-    }
-
-    input, textarea {
-      width: 100%;
-      background: var(--bg-color);
-      border: none;
-      border-bottom: 1px solid var(--border-color);
-      color: var(--text-color);
-      font-family: monospace;
-      padding: 0.5em;
-      margin-top: 1em;
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--accent-color);
-    }
-
-    .top-bar {
-      text-align: right;
-      margin-bottom: 1em;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 4em;
-      font-size: 0.8em;
-      color: var(--quote-color);
-    }
-
-    .hero-section {
-      background: url('hero-silhouette.png') center center / cover no-repeat;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      text-align: center;
-      color: var(--text-color);
-    }
-
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
-      border-radius: 12px;
-    }
-
-    .hero-section h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5em;
-    }
-
-    .hero-section p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5em;
-    }
-    
-    .subtle-note {
-      color: var(--quote-color);
-      font-style: italic;
-      margin-top: 1em;
-    }  
-
-    body.light .hero-overlay {
-      background: rgba(255, 255, 255, 0.7);
-      color: #111;
-    }
-    
-    body.light .hero-overlay h1,
-    body.light .hero-overlay p,
-    body.light .hero-overlay .subtle-note {
-      color: #111;
-    }
-    
-    body.light .hero-overlay a.button {
-      color: #111;
-      border-color: #111;
-    }
-    
-    body.light .hero-overlay a.button:hover {
-      background: #111;
-      color: #fff;
-    } 
-    .hero-overlay {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1.2s ease-out forwards;
-      animation-delay: 0.3s;
-    }
-    
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    } 
-    html {
-      scroll-behavior: smooth;
-    }  
-
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    body {
-      font-size: 1.2rem;
-    }
-  
-    .hero-section h1 {
-      font-size: 2.8rem;
-    }
-  
-    .hero-section p {
-      font-size: 1.3rem;
-    }
-  }
-  
-  @media screen and (min-width: 1025px) {
-    body {
-      font-size: 1.3rem;
-    }
-  
-    .hero-section h1 {
-      font-size: 3rem;
-    }
-  
-    .hero-section p {
-      font-size: 1.4rem;
-    }
-  }
-  
+    body { font-family: Georgia, serif; margin:0; background:#111; color:#eee; line-height:1.6; }
+    header, section { padding:3em 1.5em; max-width:800px; margin:auto; }
+    h1, h2 { font-family: 'Times New Roman', Times, serif; font-weight: normal; }
+    h1 { font-size:2.2em; margin-bottom:.2em; }
+    h2 { font-size:1.5em; margin-top:1.5em; }
+    a { color:#c99; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .hero { text-align:center; padding:4em 1.5em; background:#000 url('hero.jpg') center/cover no-repeat; color:#fff; }
+    .hero-overlay { background:rgba(0,0,0,.65); display:inline-block; padding:2em; }
+    .button { display:inline-block; padding:.6em 1em; background:#c99; color:#000; border-radius:4px; text-decoration:none; font-size:.9em; }
+    .button:hover { background:#a77; }
+    .subtle-note { margin-top:1em; font-size:.9em; color:#ccc; }
+    footer { text-align:center; padding:2em; font-size:.8em; color:#888; }
   </style>
+
+  <meta name="description" content="A philosophical novel of solitude, absurdity, and the cost of clarity in a collapsing world." />
+  <meta name="keywords" content="The Man Who Walked Alone, absurdism, existentialism, philosophy, Nietzsche, Camus, Schopenhauer, collapse, solitude, literary fiction" />
+  <meta property="og:description" content="A philosophical novel of solitude, absurdity, and the cost of clarity in a collapsing world." />
+  <meta name="twitter:description" content="A philosophical novel of solitude, absurdity, and the cost of clarity in a collapsing world.">
 </head>
 <body>
-  <div class="container">
-    <div class="top-bar">
-      <button class="button" onclick="toggleTheme()">Toggle Theme</button>
-      <button class="button" onclick="downloadPDF()">Download PDF</button>
-      <button class="button" onclick="window.location.href='index_es.html'">Español</button>
+
+<header class="hero">
+  <div class="hero-overlay">
+    <h1>The Man Who Walked Alone</h1>
+    <p>A novel about rebellion against existence, the search for meaning, and the cost of clarity in a distracted world.</p>
+    <div style="display:flex; gap:.6em; flex-wrap:wrap; justify-content:center;">
+      <a class="button" href="https://bit.ly/TMWWA-Amazon" target="_blank" rel="noopener">Buy on Amazon</a>
+      <a class="button" href="https://bit.ly/TMWWA-Goodreads" target="_blank" rel="noopener">Goodreads</a>
+      <a class="button" href="https://x.com/WalkedAloneBook" target="_blank" rel="noopener">Follow on X</a>
+      <a class="button" href="#contact">Join the List</a>
     </div>
-    
-    <section class="hero-section">
-      <div class="hero-overlay">
-        <h1>The Man Who Walked Alone</h1>
-        <p>A novel about rebellion against existence, the search for meaning, and the cost of clarity in a distracted world.</p>
-        <a href="#contact" class="button">Buy the Book</a>
-        <p class="subtle-note">Not yet released. Join the list for early access and updates.</p>
-      </div>
-    </section>
-
-    <section class="section" id="about-book">
-      <h2>About the Book</h2>
-      <p>
-        <em>The Man Who Walked Alone</em> isn’t a manifesto. It’s not a redemption arc, a hero’s journey, or an inspirational parable wrapped in platitudes. This is a book for those who’ve already stared into the abyss—only to find it laughing.
-      </p>
-      <p>
-        Gregorio M. Roquentin dismantles illusions for a living—philosophical, political, and existential. But when every system collapses under its own contradiction, what’s left to believe in? Reason? Absurdity? A black cat that speaks in riddles?
-      </p>
-      <p>
-        This is a journey through entropy, memory, and existential whiplash. From the bureaucratic absurdity of SAMSA Corporation to cafés filled with algorithmic optimism, Gregorio’s world is haunted by intelligent ghosts and abandoned truths. Along the way, he faces debates that go nowhere, systems that devour their believers, and reflections that argue back.
-      </p>
-      <p>
-        If Nietzsche played chess with Camus in a Kafka-designed office, while Schopenhauer brewed the coffee and Sartre live-tweeted—it might look something like this book.
-      </p>
-      <p>
-        There are no happy endings here. Just questions sharpened into weapons. This isn’t a story of finding meaning—it’s what happens after you stop pretending it exists.
-      </p>
-    </section>
-    
-    <section class="section" id="about-author">
-      <h2>About the Author</h2>
-      <p>
-        G. M. Absurdovich does not seek recognition. He writes as an act of filtration—distilling decades of intellectual clutter, ideological decay, and human contradiction into the cleanest possible cut of thought.
-      </p>
-      <p>
-        His influences include Nietzsche, Camus, Schopenhauer, broken spreadsheets, collapsing currencies, and those quiet moments when the system blinks but no one else notices.
-      </p>
-      <p>
-        He created Gregorio not as a protagonist, but as a pressure test. A man built to walk through failure without flinching. To observe without surrendering. To resist without preaching.
-      </p>
-      <p>
-        He lives in the margins—between systems, across disciplines, inside contradictions. He is not available for interviews. He has already said everything he needed to say.
-      </p>
-    </section>
-
-    <section class="section" id="themes">
-      <h2>Themes and Motifs</h2>
-      <p><strong>Absurdity:</strong> Gregorio walks through systems that pretend to be rational, only to find they’re powered by contradictions and delusions.</p>
-      <p><strong>Entropy and Collapse:</strong> Collapse isn’t catastrophe—it’s just gravity with paperwork.</p>
-      <p><strong>Philosophy in Practice:</strong> Gregorio lives Nietzsche, Camus, and Schopenhauer—sharply and without apology.</p>
-      <p><strong>The Trap of Systems:</strong> Every system he enters tries to seduce him. But Gregorio’s learned: all systems have bugs. The worst infest your thinking.</p>
-      <p><strong>Loneliness as Sovereignty:</strong> He’s not lost. He’s alone on purpose. Freedom is the absence of performance.</p>
-      <p><strong>Meaning through Action:</strong> Gregorio’s final act isn’t rational. It’s real. That’s enough.</p>
-    </section>
-
-    <section class="section" id="rational-absurdism">
-      <h2>Rational Absurdism: A New Literary Archetype</h2>
-      <p>
-        Gregorio M. Roquentin is not Meursault. He is not Gregor Samsa, nor Sartre’s Antoine, nor Dostoevsky’s Underground Man. Those men crumbled under the weight of meaninglessness. Gregorio walks through it—deliberately, tactically, with clear eyes and no illusions.
-      </p>
-      <p>
-        <strong>Rational Absurdism</strong> is not a philosophy. It is a response. It emerges after the epiphany of absurdity, after the loss of faith, after the collapse of narrative—and instead of dissolving, it chooses motion. Gregorio doesn’t escape the void; he navigates it like a strategist moving through fog.
-      </p>
-      <p>
-        The absurd is real. But so is precision. Gregorio trains, reflects, and acts—not because meaning awaits, but because action itself is the final rebellion. He is not redeemed. He is not enlightened. He is functional.
-      </p>
-      <p>
-        In Gregorio, absurdism becomes something new: <em>lucid, structured, and unwilling to groan.</em>
-      </p>
-    
-      <p style="text-align: center; color: var(--quote-color); margin: 3em 0;">— ✦ —</p>
-    
-      <h3 style="margin-top: 1em;">Gregorio as Synthesis — and Evolution</h3>
-      <p>
-        Gregorio is more than a collage of existential ideas. He is their natural conclusion—updated for a world of collapsing economies, digital surveillance, and postmodern meaning fatigue.
-      </p>
-      <ul>
-        <li><strong>Nietzschean in Will</strong> – He sculpts his soul through hardship.</li>
-        <li><strong>Camusian in Clarity</strong> – He sees the absurd, but chooses to act.</li>
-        <li><strong>Kafkaesque in Environment</strong> – He works within a system that is broken, but never broken by it.</li>
-        <li><strong>Sartrean in Freedom</strong> – He bears the burden of freedom, and chooses discipline over despair.</li>
-        <li><strong>Stoic in Practice</strong> – He trains his body, mind, and emotions to serve his sovereignty.</li>
-        <li><strong>South American in Soul</strong> – Rooted in collapse, he learns to walk without illusions.</li>
-      </ul>
-    </section>
-
-    <section class="section" id="mental-map">
-
-      <p style="text-align: center; color: var(--quote-color); margin: 3em 0;">— ✦ —</p>
-    
-      <h2>The Mental Map of Gregorio</h2>
-      <p class="quote" style="margin-bottom: 2em;">
-        Not a man in search of meaning—<br />
-        a man who builds structure inside the meaningless.
-      </p>
-    
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2em;">
-        
-        <div>
-          <h3>Rational Absurdism</h3>
-          <ul>
-            <li>Acting without faith</li>
-            <li>Clarity as rebellion</li>
-            <li>Discipline over despair</li>
-          </ul>
-        </div>
-    
-        <div>
-          <h3>Collapse as Structure</h3>
-          <ul>
-            <li>Economic entropy</li>
-            <li>Systemic absurdity</li>
-            <li>Bureaucratic theater</li>
-          </ul>
-        </div>
-    
-        <div>
-          <h3>Solitude as Sovereignty</h3>
-          <ul>
-            <li>Non-performance</li>
-            <li>Inner independence</li>
-            <li>Mastery through isolation</li>
-          </ul>
-        </div>
-    
-        <div>
-          <h3>Entropy and Motion</h3>
-          <ul>
-            <li>Scheduled resistance</li>
-            <li>Strategic detachment</li>
-            <li>Progress without destination</li>
-          </ul>
-        </div>
-    
-        <div>
-          <h3>Lucid Resistance</h3>
-          <ul>
-            <li>Weaponized clarity</li>
-            <li>Refusing to groan</li>
-            <li>Absurd logic, functional life</li>
-          </ul>
-        </div>
-    
-        <div>
-          <h3>The System as Theater</h3>
-          <ul>
-            <li>Samsa Corporation</li>
-            <li>Compliance as camouflage</li>
-            <li>Playing the fool without being fooled</li>
-          </ul>
-        </div>
-    
-      </div>
-    </section>
-
-    <section class="section" id="quotes">
-      <h2>Quotes from the Book</h2>
-      <blockquote id="quote-rotate">
-        “Every time someone tells me to 'just be myself,' I wonder if they’ve considered the consequences.”
-      </blockquote>
-    </section>
-    
-    <section class="section" id="excerpt">
-      <h2>Read an Excerpt</h2>
-      <p>
-        Amsterdam pulsed with the illusion of order. Gregorio M. Roquentin—skeptic, strategist, and wanderer of absurdities—watched the Westerkerk clock tick with mechanical arrogance.
-      </p>
-      <p>
-        No partner. No children. Just a cactus named Pascal and a mind that refused to shut up.
-      </p>
-      <p>
-        If you've ever stared into the abyss and smirked, this is your book.
-      </p>
-      <button class="button" onclick="toggleEarlyAccess()">Get Early Access</button>
-      <div id="early-access-form" style="display: none; margin-top: 2em;">
-        <p>
-          Subscribe to be notified when <em>The Man Who Walked Alone</em> is available.
-          No spam. No illusions. Just one sharp email when the time is right.
-        </p>
-
-        <a href="#contact" class="button">Join via Contact Form</a>
-        <p style="margin-top: 0.5em; color: var(--quote-color); font-style: italic;">
-          You’ll be added to the early access list automatically.
-        </p>
-
-        <div id="confirmation" style="display:none; margin-top: 1.5em; font-style: italic;">
-          Thank you. You’ll hear from us when it matters—once.
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="video">
-      <h2>Fragments from the Abyss</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 1em;">
-        <iframe 
-          src="https://www.youtube.com/embed/UGNBf933pVg?rel=0" 
-          title="Fragments from the Abyss"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p class="subtle-note" style="margin-top: 1em;">
-        A glimpse into Gregorio’s descent — where silence thinks louder than noise.
-      </p>
-    </section>
-
-    <section class="section" id="quiz">
-      <h2>Are You Ready to Walk Alone?</h2>
-      <form id="walk-alone-quiz">
-        <p><strong>1.</strong> You discover the world runs on illusions. You...</p>
-        <label><input type="radio" name="q1" value="hide"> ...look away and continue pretending</label><br>
-        <label><input type="radio" name="q1" value="confront"> ...try to convince others</label><br>
-        <label><input type="radio" name="q1" value="exploit"> ...exploit it while it lasts</label><br>
-        <label><input type="radio" name="q1" value="leave"> ...walk away without a word</label>
-    
-        <p><strong>2.</strong> Freedom feels most like...</p>
-        <label><input type="radio" name="q2" value="noise"> ...noise and confusion</label><br>
-        <label><input type="radio" name="q2" value="choice"> ...the ability to choose your burden</label><br>
-        <label><input type="radio" name="q2" value="solitude"> ...solitude with clarity</label><br>
-        <label><input type="radio" name="q2" value="power"> ...power over others</label>
-    
-        <p><strong>3.</strong> You stare into the abyss. It...</p>
-        <label><input type="radio" name="q3" value="blinks"> ...blinks first</label><br>
-        <label><input type="radio" name="q3" value="devours"> ...devours your thoughts</label><br>
-        <label><input type="radio" name="q3" value="mirrors"> ...mirrors your true self</label><br>
-        <label><input type="radio" name="q3" value="shrugs"> ...shrugs like Camus’ Sisyphus</label>
-    
-        <button type="submit" class="button" style="margin-top: 1em;">Reveal Your Result</button>
-      </form>
-    
-      <div id="quiz-result" style="display: none; margin-top: 2em; font-style: italic;"></div>
-    </section>
-
-    <section id="quote-oracle" class="section">
-      <h2>Quote of the Moment</h2>
-      <p id="oracle-quote" class="quote">Loading...</p>
-    </section>
-
-    <section class="section" id="contact">
-      <h2>Contact / Join the List</h2>
-    
-      <form id="contact-form">
-        <label for="email">Email (for updates only):</label>
-        <input type="email" id="email" name="email" required>
-    
-        <label for="msg">Message (optional):</label>
-        <textarea id="msg" name="message" rows="3"></textarea>
-    
-        <input type="text" name="_gotcha" style="display:none" />
-    
-        <button type="submit" class="button">Subscribe</button>
-      </form>
-    
-      <!-- ⬇️ Move confirmation div OUTSIDE the form -->
-      <div id="contact-confirmation" style="display: none; margin-top: 2em; font-style: italic; color: #888;">
-        Thanks — you’ve been added to the list.
-      </div>
-    </section>
-
-    <footer>
-      Created in the spirit of absurdism, solitude, and clarity.<br>
-      © 2025. The Man Who Walked Alone.
-    </footer>
+    <p class="subtle-note">Available now. Join the list for future updates.</p>
   </div>
+</header>
 
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-    }
+<section class="section" id="about-book">
+  <h2>About the Book</h2>
+  <p>
+    <em>The Man Who Walked Alone</em> isn’t a manifesto. It isn’t a redemption arc or a hero’s journey wrapped in platitudes. It’s for readers who’ve stared into the abyss and found it uninterested in staring back.
+  </p>
+  <p>
+    Gregorio M. Roquentin dismantles illusions as a way of life—philosophical, political, and personal. When every system collapses under its own contradictions, what remains? Not faith. Not comfort. Only the discipline of continuing to walk.
+  </p>
+  <p>
+    This is a journey through entropy, memory, and intellectual sobriety: corporations simulating control, languages hollowed out, ideologies mistaken for identity. Gregorio observes, records, and advances. Without proclamations.
+  </p>
+  <p>
+    If Nietzsche played chess with Camus in an office designed by Kafka, the board might look like this book. There is no “happy ending”; only questions sharpened until they become tools.
+  </p>
+</section>
 
-    function downloadPDF() {
-      const printContent = document.querySelector('.container').cloneNode(true);
-      printContent.querySelector('.top-bar').remove();
-      const form = printContent.querySelector('form');
-      if (form) form.remove();
+<section class="section" id="about-author">
+  <h2>About the Author</h2>
+  <p>
+    G. M. Absurdovich writes as an act of filtration—distilling collapse, contradiction, and solitude into precise clarity.
+  </p>
+  <p>
+    Influenced by Nietzsche, Camus, and Schopenhauer, he writes from lived systems breaking—currencies, bureaucracies, illusions.
+  </p>
+  <p>
+    Gregorio is not a protagonist but a test: a man who refuses to flinch, preach, or perform.
+  </p>
+</section>
 
-      const printWindow = window.open('', '', 'width=800,height=600');
-      printWindow.document.write(`
-        <html>
-        <head>
-          <title>The Man Who Walked Alone - PDF</title>
-          <style>
-            body {
-              font-family: 'EB Garamond', serif;
-              color: #000;
-              background: #fff;
-              padding: 2em;
-              line-height: 1.6;
-            }
-            h1, h2 {
-              font-family: 'Courier New', monospace;
-            }
-            .quote {
-              font-style: italic;
-              color: #333;
-              padding-left: 1em;
-              border-left: 2px solid #999;
-              margin: 1em 0;
-            }
-            footer {
-              text-align: center;
-              margin-top: 4em;
-              font-size: 0.8em;
-              color: #666;
-            }
-          </style>
-        </head>
-        <body>${printContent.innerHTML}</body>
-        </html>
-      `);
-      printWindow.document.close();
-      printWindow.focus();
-      printWindow.print();
-    }
-  </script>  
-  <script src="submit.js"></script>
-  <script>
-    const quotes = [
-      "“Every time someone tells me to 'just be myself,' I wonder if they’ve considered the consequences.”",
-      "“Don’t mistake solitude for loneliness. Isolation is exile. Solitude is sovereignty.”",
-      "“We seek order, we manufacture oppression. We seek fairness, we build cages.”",
-      "“You matter. You matter so much… until you multiply yourself by the speed of light squared.”",
-      "“AI won’t replace stupidity. It’s just putting it on autopilot—with better UX.”",
-      "“The world moved forward as if direction existed. As if time wasn’t just a gear pretending to keep order.”"
-    ];
-  
-    const quoteElement = document.getElementById("quote-rotate");
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    quoteElement.innerText = quotes[randomIndex];
-  </script>
-  <script>
-  function toggleEarlyAccess() {
-    const formBlock = document.getElementById("early-access-form");
-    formBlock.style.display = (formBlock.style.display === "none") ? "block" : "none";
-  }
-  </script>
-  <section id="secret-excerpt" class="section" style="display: none;">
-    <h2>Excerpt: File Not Found</h2>
-    <p class="quote">
-      “He stared at the digital silence and realized: sometimes, not being seen is the only form of truth left.”
-    </p>
-    <p>
-      This excerpt wasn’t meant to be indexed. It exists outside the sitemap. Like Gregorio.
-    </p>
-    <p>
-      <em>In Amsterdam, the clocks still chimed — unaware of how irrelevant they had become.</em>
-    </p>
-  </section>
-  <script>
-    document.addEventListener("keydown", function (e) {
-      if (e.shiftKey && e.key === "A") {
-        const section = document.getElementById("secret-excerpt");
-        section.style.display = "block";
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const quotes = [
-        "“The spreadsheet is a lie told in numbers.”",
-        "“If truth is a burden, Gregorio carried it like a blade in his coat pocket.”",
-        "“Most people do not want freedom. They want safety, applause, and sleep.”",
-        "“The abyss isn’t a threat. It’s an invitation.”",
-        "“He didn’t seek clarity. He weaponized it.”"
-      ];
-  
-      const quoteEl = document.getElementById("oracle-quote");
-      if (quoteEl) {
-        const quote = quotes[Math.floor(Math.random() * quotes.length)];
-        quoteEl.textContent = quote;
-  
-        // Trigger fade-in
-        setTimeout(() => {
-          quoteEl.classList.add("visible");
-        }, 100);
-      }
-    });
-  </script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", showRandomQuote);
-  </script>
+<section class="section" id="themes">
+  <h2>Themes</h2>
+  <ul>
+    <li>Absurdism without theatrics.</li>
+    <li>Solitude as rebellion.</li>
+    <li>The fragility of systems—currencies, corporations, ideologies.</li>
+    <li>The most dangerous illusions are mental.</li>
+    <li>Resilience comes not from certainty, but from questioning.</li>
+  </ul>
+</section>
 
-  <style>
-    #oracle-quote {
-      opacity: 0;
-      transition: opacity 0.8s ease-in-out;
-    }
-  
-    #oracle-quote.visible {
-      opacity: 1;
-    }
-    #walk-alone-quiz label {
-      display: block;
-      margin-left: 1.5em;
-      margin-bottom: 0.5em;
-    }
-    #walk-alone-quiz p {
-      margin-top: 2em;
-      font-weight: bold;
-    }
-  </style>
-  <script>
-    document.getElementById("walk-alone-quiz").addEventListener("submit", function(e) {
-      e.preventDefault();
-  
-      const answers = [
-        document.querySelector('input[name="q1"]:checked')?.value,
-        document.querySelector('input[name="q2"]:checked')?.value,
-        document.querySelector('input[name="q3"]:checked')?.value
-      ];
-  
-      const resultEl = document.getElementById("quiz-result");
-  
-      if (answers.includes(undefined)) {
-        resultEl.textContent = "Complete the journey before expecting insight.";
-      } else if (answers.includes("leave") && answers.includes("solitude") && answers.includes("mirrors")) {
-        resultEl.textContent = "You're ready. The path won't greet you — but it will open.";
-      } else {
-        resultEl.textContent = "Not yet. The mirror still holds too many faces.";
-      }
-  
-      resultEl.style.display = "block";
-      resultEl.scrollIntoView({ behavior: "smooth" });
-    });
-  </script>
+<section class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Subscribe for updates:</p>
+  <form>
+    <input type="email" placeholder="Your email" required>
+    <button type="submit">Join</button>
+  </form>
+  <p style="margin-top:1em;">
+    Prefer email? <a href="mailto:Gregorio.walks@proton.me">Gregorio.walks@proton.me</a>
+  </p>
+  <p style="margin:.5em 0;">
+    Links:
+    <a href="https://bit.ly/TMWWA-Amazon" target="_blank" rel="noopener">Amazon</a> ·
+    <a href="https://bit.ly/TMWWA-Goodreads" target="_blank" rel="noopener">Goodreads</a> ·
+    <a href="https://x.com/WalkedAloneBook" target="_blank" rel="noopener">X</a>
+  </p>
+</section>
+
+<footer>
+  <p>&copy; 2025 G. M. Absurdovich. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
