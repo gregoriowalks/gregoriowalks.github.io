@@ -282,8 +282,30 @@
       font-size: 1.4rem;
     }
   }
+
+/* Fix for small screens (iPhone issue) */
+  @media screen and (max-width: 600px) {
+    .hero-section {
+      height: auto;
+      min-height: 100vh;
+      padding: 2em 1em;
+    }
   
-  </style>
+    .hero-overlay {
+      padding: 1.5em;
+    }
+  
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-section p {
+      font-size: 1rem;
+    }
+  }
+
+</style>
+
 </head>
 <body>
   <div class="container">
