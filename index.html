@@ -304,6 +304,26 @@
     }
   }
 
+  /* Fix for iPhone landscape (very short screens) */
+  @media screen and (orientation: landscape) and (max-height: 500px) {
+    .hero-section {
+      height: auto;
+      min-height: auto;
+      padding: 1.5em 1em;
+    }
+
+    .hero-overlay {
+      padding: 1.2em;
+    }
+
+    .hero-section h1 {
+      font-size: 1.7rem;
+    }
+
+    .hero-section p {
+      font-size: 0.95rem;
+    }
+  }   
 </style>
 
 </head>
